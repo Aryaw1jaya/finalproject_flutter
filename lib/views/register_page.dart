@@ -17,6 +17,8 @@ class _LoginPageState extends State<RegisterPage> {
   List<String> Kelas = ["10", "11", "12"];
   String selectedClass = "10";
 
+  final emailController = TextEditingController();
+
   onTapGender(Gender genderInput) {
     if (genderInput == Gender.lakilaki) {
       gender = "Laki-laki";
@@ -29,17 +31,27 @@ class _LoginPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF3F7F8),
       // resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        title: Text(
-          "Yuk isi data diri",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w700,
-            fontSize: 18,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight + 20),
+        child: AppBar(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25),
+            ),
+          ),
+          elevation: 2,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Text(
+            "Yuk isi data diri",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+            ),
           ),
         ),
       ),
@@ -54,6 +66,7 @@ class _LoginPageState extends State<RegisterPage> {
                 hintText: 'Masukan nama anda',
               ),
               RegisterTextField(
+                // controller: emailController,
                 title: 'Email',
                 hintText: 'Masukan email anda',
               ),
@@ -179,7 +192,9 @@ class _LoginPageState extends State<RegisterPage> {
               ButtonLogin(
                 // Button Register
                 onTap: () {
-                  Navigator.of(context).pushNamed(MainPage.route);
+                  // print(emailController.text);
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      MainPage.route, (context) => false);
                 },
                 backgroundColor: R.colors.primary,
                 child: Row(
@@ -209,10 +224,12 @@ class RegisterTextField extends StatelessWidget {
     Key? key,
     required this.title,
     required this.hintText,
+    this.controller,
   }) : super(key: key);
 
   final String title;
   final String hintText;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -237,6 +254,7 @@ class RegisterTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: TextField(
+            controller: controller,
             decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: hintText,

@@ -1,4 +1,5 @@
 import 'package:finalproject_flutter/views/login_page.dart';
+import 'package:finalproject_flutter/views/main/latihan_soal/mapel_page.dart';
 import 'package:finalproject_flutter/views/main_page.dart';
 import 'package:finalproject_flutter/views/register_page.dart';
 import 'package:finalproject_flutter/views/splash_screen.dart';
@@ -15,17 +16,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Final Project',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
       // home: const SplashScreen(),
       initialRoute: "/",
       routes: {
+        // "/": (context) => const MainPage(),
         "/": (context) => const SplashScreen(),
         LoginPage.route: (context) => const LoginPage(),
         RegisterPage.route: (context) => RegisterPage(),
         MainPage.route: (context) => MainPage(),
+        MapelPage.route: (context) => MapelPage(),
       },
     );
   }
