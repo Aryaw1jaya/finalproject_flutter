@@ -19,4 +19,7 @@ class Assets {
   String img_home = "assets/img_home.png";
   String ic_atom = "assets/ic_atom.png";
   String img_banner = "assets/img_banner.png";
+
+  // Paket Soal
+  String ic_note = "assets/ic_note.png";
 }

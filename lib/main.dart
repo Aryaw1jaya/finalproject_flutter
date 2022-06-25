@@ -1,5 +1,6 @@
 import 'package:finalproject_flutter/views/login_page.dart';
 import 'package:finalproject_flutter/views/main/latihan_soal/mapel_page.dart';
+import 'package:finalproject_flutter/views/main/latihan_soal/paket_soal_page.dart';
 import 'package:finalproject_flutter/views/main_page.dart';
 import 'package:finalproject_flutter/views/register_page.dart';
 import 'package:finalproject_flutter/views/splash_screen.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         RegisterPage.route: (context) => RegisterPage(),
         MainPage.route: (context) => MainPage(),
         MapelPage.route: (context) => MapelPage(),
+        PaketSoalPage.route: (context) => PaketSoalPage(),
       },
     );
   }
