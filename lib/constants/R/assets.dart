@@ -12,7 +12,7 @@ class Assets {
   //Bottom Navbar
   String btm_home = "assets/ic_home.png";
   String btm_discuss = "assets/ic_discuss.png";
-  String btm_profile = "assets/ic_kimia.png";
+  String btm_profile = "assets/ic_profile.png";
 
   // Main Page
   String avatar = "assets/ic_avatar.png";
