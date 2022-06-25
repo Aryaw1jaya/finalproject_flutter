@@ -4,9 +4,14 @@ import 'package:finalproject_flutter/views/main/latihan_soal/paket_soal_page.dar
 import 'package:finalproject_flutter/views/main_page.dart';
 import 'package:finalproject_flutter/views/register_page.dart';
 import 'package:finalproject_flutter/views/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      // options: DefaultFirebaseOptions.currentPlatform,
+      );
   runApp(const MyApp());
 }
 
