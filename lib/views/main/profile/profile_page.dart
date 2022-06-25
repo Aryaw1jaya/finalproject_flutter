@@ -14,6 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Color(0xffF3F7F8),
       appBar: AppBar(
+        elevation: 1,
         title: Text("Akun Saya"),
         actions: [
           TextButton(
